@@ -124,3 +124,5 @@ C:\Workspace>git push origin myBranch
 * #### 10.2 로컬 branch를 push한 다음 remote/origin 에서 merge
     로컬 branch를 push 하는 방법이다.<br/>
     이 방법으로 push를 하게 되면 GitHub Repository에 myBranch가 생기게된다.<br/>
+    GitHub Repository로 이동해서 Pull Request를 누르면 New Pull Request 라는 버튼이 보인다.<br/>
+    New Pull Request를 클릭한 다음

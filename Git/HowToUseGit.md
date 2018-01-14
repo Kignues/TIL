@@ -93,7 +93,20 @@ git commit -m "myCommitMessage"
 
 ***
 
-## 9. Git Push 실행
+## 9. Git Merge 실행
+어느정도 원하는 작업수준에 도달했으면 이제는 원본인 master에 병합을 시켜야한다<br/>
+이 작업을 도와주는 명령어가 git merge 이다.<br/>
+여러사람이 작업할 경우에 원본내용과 너무 많이 다르다면 conflict가 발생할 수 있다.<br/>
+이런경우엔 충돌난 부분을 수작업으로 수정해야 한다.<br/>
+그렇기때문에 항상 master를 풀받고 작업을 하는 습관이 중요하다.<br/>
+아래의 명령어는 master에 myBranch를 merge 하는 명령어이다.<br/>
+우선 master로 checkout 해서 branch를 변경하고 merge를 하는 내용이다<br/>
+```
+C:\Workspace>git checkout master
+C:\Workspace>git merge myBranch
+```
+
+## 10. Git Push 실행
 앞서 진행한 git commit은 내 로컬에서의 상태를 저장하기 위한 명령이었다.<br/>
 Commit을 하더라도 GitHub 서버의 Repository 는 현재 나의 작업상황을 알 턱이 없다.<br/>
 git push를 통해 Master(origin)에 내 작업결과를 발행해야 GitHub에서 나의 작업물을 확인할 수 있다.<br/>

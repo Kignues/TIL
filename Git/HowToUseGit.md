@@ -93,26 +93,34 @@ git commit -m "myCommitMessage"
 
 ***
 
-## 9. Git Merge 실행
-어느정도 원하는 작업수준에 도달했으면 이제는 원본인 master에 병합을 시켜야한다<br/>
-이 작업을 도와주는 명령어가 git merge 이다.<br/>
-여러사람이 작업할 경우에 원본내용과 너무 많이 다르다면 conflict가 발생할 수 있다.<br/>
-이런경우엔 충돌난 부분을 수작업으로 수정해야 한다.<br/>
-그렇기때문에 항상 master를 풀받고 작업을 하는 습관이 중요하다.<br/>
-아래의 명령어는 master에 myBranch를 merge 하는 명령어이다.<br/>
-우선 master로 checkout 해서 branch를 변경하고 merge를 하는 내용이다<br/>
-```
-C:\Workspace>git checkout master
-C:\Workspace>git merge myBranch
-```
-
-## 10. Git Push 실행
+## 9. Git Push 실행
 앞서 진행한 git commit은 내 로컬에서의 상태를 저장하기 위한 명령이었다.<br/>
 Commit을 하더라도 GitHub 서버의 Repository 는 현재 나의 작업상황을 알 턱이 없다.<br/>
-git push를 통해 Master(origin)에 내 작업결과를 발행해야 GitHub에서 나의 작업물을 확인할 수 있다.<br/>
-아래 명령어의 myBranch 부분에 자신의 브랜치를 넣으면 된다.
+git push를 통해 GitHub 서버에 내 작업결과를 발행해야 GitHub에서 내가 생성한 branch의 작업물을 확인할 수 있다.<br/>
+아래 명령어의 myBranch 부분에 자신의 branch를 넣으면 된다.
 ```
 C:\Workspace>git push origin myBranch
 ```
 
 ***
+
+## 10. Git Merge 실행
+어느정도 원하는 작업수준에 도달했으면 이제는 원본인 master에 병합을 시켜야한다.<br/>
+궁극적인 목표는 GitHub의 remote/origin(원격저장소의 master) 에 병합을 하는것이다.<br/>
+원격저장소의 master에 병합하는 방법은 2가지가 있다.<br/>
+
+* #### 10.1 로컬 master에 merge 후 push
+    현재 작업중인 로컬 myBranch를 로컬 master에 병합한 다음 로컬 master를 push 하는 방법이다.<br/>
+    이렇게 할 경우에 GitHub웹 페이지 내에서 별도로 조작할 필요가 없이 바로 Repository에 반영되게 된다.<br/>
+    이 방법으로 push를 하게되면 별도의 myBranch가 생기지 않고 master branch만 존재하게된다.<br/>
+    혼자 사용한다면 이 방법으로 하는게 편한 것 같다...
+    
+    ```
+    C:\Workspace>git checkout master
+    C:\Workspace>git pull
+    C:\Workspace>git merge myBranch
+    C:\Workspace>git push origin master
+    ```
+* #### 10.2 로컬 branch를 push한 다음 remote/origin 에서 merge
+    로컬 branch를 push 하는 방법이다.<br/>
+    이 방법으로 push를 하게 되면 GitHub Repository에 myBranch가 생기게된다.<br/>

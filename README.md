@@ -1,4 +1,4 @@
-# TIL (Today I Learned) ver.2018.01.14
+# TIL (Today I Learned) Rules - ver.1 (2018.01.14)
 ## 2018.01.14 ~
 
 #### 목적

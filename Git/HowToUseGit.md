@@ -88,7 +88,7 @@ git add 명령어를 통해 Stage에 파일을 올려놓았다면 이제 Commit�
 myCommitMessage 위치에 Commit 시점에 대한 메세지 적는다.<br/>
 본인이 기억하기 편한 의미있는 내용을 짧은글로 적어놓는것이 좋다.<br/>
 ```
-git commit -m myCommitMessage
+git commit -m "myCommitMessage"
 ```
 
 ***

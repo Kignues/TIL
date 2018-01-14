@@ -25,8 +25,8 @@ https://git-scm.com/downloads 페이지로 이동하여 OS에 맞는 Git을 다�
 Repository 생성과 Git 설치가 모두 끝났다면 Editor를 설치하자.<br/>
 Git Bash를 사용하여 Git을 사용할 수도 있지만, 파일생성과 수정을 용이하게 하기위해 Editor를 설치했다.<br/>
 * VS Code<br/>
-https://code.visualstudio.com/ <br/>
-회사에서도 사용중인 Text Editor 이다. 유용한 플러그인도 많이있기도 하고 가장 익숙해서  이걸 사용하는것으로 했다.
+    https://code.visualstudio.com/ <br/>
+    회사에서도 사용중인 Text Editor 이다. 유용한 플러그인도 많이있기도 하고 가장 익숙해서  이걸 사용하는것으로 했다.
 
 *** 
 
@@ -36,31 +36,31 @@ VS Code를 실행해서 파일>폴더 열기 로 해당 Workspace 폴더를 오�
 Ctrl + ` 키를 누르면 터미널 창이 열린다.<br/>
 아래의 과정을 통해 Git Clone한다.
 
-#### 5.1 git init을 통한 git 디렉토리 생성
-```
-C:\Workspace> git init
-```
-git init을 하게되면 이 디렉토리에서 git 명령어들을 사용할 수 있게 초기화 해준다.<br/>
-물론 Git 초기화를 행한 디렉토리의 하위 디렉토리들도 모두 포함된다.
+* ### 5.1 git init을 통한 git 디렉토리 생성
+    ```
+    C:\Workspace> git init
+    ```
+    git init을 하게되면 이 디렉토리에서 git 명령어들을 사용할 수 있게 초기화 해준다.<br/>
+    물론 Git 초기화를 행한 디렉토리의 하위 디렉토리들도 모두 포함된다.
 
-#### 5.2 Git Repository Clone 생성
-자신의 계정에 생성한 GitHub Repository 로 페이지로 이동한다.<br/>
-우측의 'Clone or Download' 라는 녹색 버튼을 클릭하게되면 Url 주소가 나온다.<br/>
-Url 주소를 직접 복사하거나 문서모양의 버튼을 눌러서 클립보드로 복사해준다.<br/>
-복사한 주소를 아래 명령어 CopiedUrl 부분에 넣어준다
+* ### 5.2 Git Repository Clone 생성
+    자신의 계정에 생성한 GitHub Repository 로 페이지로 이동한다.<br/>
+    우측의 'Clone or Download' 라는 녹색 버튼을 클릭하게되면 Url 주소가 나온다.<br/>
+    Url 주소를 직접 복사하거나 문서모양의 버튼을 눌러서 클립보드로 복사해준다.<br/>
+    복사한 주소를 아래 명령어 CopiedUrl 부분에 넣어준다
 
-```
-C:\Workspace> git clone CopiedUrl
-```
+    ```
+    C:\Workspace> git clone CopiedUrl
+    ```
 
 ***
 
 ## 6. Git Branch 생성
-Repository를 클론받았으면 Branch를 생성해야한다.<br/>
-Branch를 생성하게되면 Master Branch를 기반으로한 별도의 작업 영역이 생기게 되는데, 
-Branch를 사용하는것으로 Master Branch 즉 원본이 오염되는 일을 방지할 수 있다.<br/>
-안전한 작업 영역을 만들기 위한 필수 절차이다.
-아래 명령어의 myBranchName 부분에 자신이 원하는 Branch 이름을 적으면 된다.
+Repository를 클론받았으면 branch를 생성해야한다.<br/>
+branch를 생성하게되면 master를 기반으로한 Working Directory(별도의 작업 영역)이 생기게 되는데, 
+branch를 사용하는것으로 master 즉 원본이 오염되는 일을 방지할 수 있다.<br/>
+안전한 작업 영역을 만들기 위한 필수 절차이다.<br/>
+아래 명령어의 myBranchName 부분에 자신이 원하는 branch 이름을 적으면 된다.
 ```
 C:\Workspace> git checkout -b myBranchName
 ```
@@ -83,13 +83,16 @@ C:\Workspace>git add myFileName
 
 ## 8. Git Commit 실행
 git add 명령어를 통해 Stage에 파일을 올려놓았다면 이제 Commit을 실행해서 스냅샷을 만들 수 있다. <br/>
+Head 라는 영역에 본인이 작업한 것들이 반영되는것이다.<br/>
 게임에서 Save Point를 만드는것과 같다고 생각하면 쉽다.<br/>
 아래 명령어를 통해 Stage에 있는 파일들을 Commit할 수 있다.<br/>
 myCommitMessage 위치에 Commit 시점에 대한 메세지 적는다.<br/>
 본인이 기억하기 편한 의미있는 내용을 짧은글로 적어놓는것이 좋다.<br/>
+여기까지가 Working Directory(branch 생성) > Stage(git add) > Head(git commit) 순서로 진행한것이며, Git을 사용하기 위한 기본 절차인 것이다.
 ```
 git commit -m "myCommitMessage"
 ```
+
 
 ***
 
@@ -109,10 +112,10 @@ C:\Workspace>git push origin myBranch
 궁극적인 목표는 GitHub의 remote/origin(원격저장소의 master) 에 병합을 하는것이다.<br/>
 원격저장소의 master에 병합하는 방법은 2가지가 있다.<br/>
 
-* #### 10.1 로컬 master에 merge 후 push
+* ### 10.1 로컬 master에 merge 후 push
     현재 작업중인 로컬 myBranch를 로컬 master에 병합한 다음 로컬 master를 push 하는 방법이다.<br/>
     이렇게 할 경우에 GitHub웹 페이지 내에서 별도로 조작할 필요가 없이 바로 Repository에 반영되게 된다.<br/>
-    이 방법으로 push를 하게되면 별도의 myBranch가 생기지 않고 master branch만 존재하게된다.<br/>
+    이 방법으로 push를 하게되면 별도의 myBranch가 생기지 않고 masterh만 존재하게된다.<br/>
     혼자 사용한다면 이 방법으로 하는게 편한 것 같다...
     
     ```
@@ -121,8 +124,30 @@ C:\Workspace>git push origin myBranch
     C:\Workspace>git merge myBranch
     C:\Workspace>git push origin master
     ```
-* #### 10.2 로컬 branch를 push한 다음 remote/origin 에서 merge
+* ### 10.2 로컬 branch를 push한 다음 remote/origin 에서 merge
     로컬 branch를 push 하는 방법이다.<br/>
+    ```
+    C:\Workspace>git push origin myBranch
+    ```
     이 방법으로 push를 하게 되면 GitHub Repository에 myBranch가 생기게된다.<br/>
-    GitHub Repository로 이동해서 Pull Request를 누르면 New Pull Request 라는 버튼이 보인다.<br/>
-    New Pull Request를 클릭한 다음
+    GitHub Repository로 이동해서 Pull Request를 누르면 Example Comparisons 라는 박스 안에 방금 push한 myBranch가 보인다.<br/>
+    myBranch를 클릭하게되면 수정된부분을 확인할 수 있다.<br/>
+    수정한 부분을 remote/origin 에 병합하려면 Create Pull Request라는 녹색 버튼을 클릭해서 추가할 코멘트가 있다면 작성하고 Create Pull Request를 다시 눌러주면 끝이다.<br/>
+    잠시 기다리면 Merge Pull Request 버튼이 활성화 되어있는 페이지로 이동한다.<br/>
+    다른 작업자와 같이 개발하는 경우에는 여기서 변경된 부분을 같이 확인한 다음 이상이 없다면 merge 권한이 있는 사람이 Merge를 허용하면 된다.<br/>
+    지금은 혼자 사용하는것이므로 Confirm Merge를 누르면 되겠다.<br/>
+
+## Summary
+* 게임에서의 Save 와 비슷하다
+* 1번 슬롯 SaveData(master)에서 2번, 3번, 4번...슬롯(branch)로 저장하면서 다른 루트를 시도하는것    
+* 만족스러운 결과는 1번 슬롯에 덮어쓰기(merge)
+* 공통점은 원본을 훼손시키지 않고 다른 시도를 할 수 있다는 부분
+
+## Review
+직장에서 항상 습관적으로 사용하던 Git을 다시 개념을 정리해 놓으니 이해도가 높아진 기분이다.<br/>
+직장에서 사용하는 GitLab이나 GitHub이나 한 뿌리여서 그런지 이해하기는 수월했다.
+
+## Reference
+* git 간편안내서 - http://rogerdudler.github.io/git-guide/index.ko.html
+* git 가이드 - https://git-scm.com/book/ko/v1
+

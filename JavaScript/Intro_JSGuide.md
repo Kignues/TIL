@@ -4,3 +4,8 @@
 * 인터넷과 WWW(World Wide Web)에 대한 보편적 이해
 * HTMl에 대해 잘 알고있을것.
 * 약간의 프로그래밍 경험. 만약 프로그래밍이 처음이라면 링크를 타고 들어가 튜토리얼을 해볼것.<br/> https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+## 추가
+한국어로 번역된 페이지가 있음을 확인.<br/>
+* MDN Web Docs - https://developer.mozilla.org/ko/docs/Web/JavaScript
+* MDN JS Tutorial - https://developer.mozilla.org/ko/docs/Web/JavaScript

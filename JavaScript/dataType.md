@@ -74,6 +74,41 @@ isFinite(NaN);       // false
 'hello'.length; // 5
 ```
 
+* charAt(), replace(), toUpperCase() 등의 메소드를 지원한다.
+```JS
+'hello'.charAt(0); // "h" 0번째의 문자
+'hello, world'.replace('hello', 'goodbye'); // "goodbye, world" 문자열 치환
+'hello'.toUpperCase(); // "HELLO" 대문자로 변환
+```
+
+### 2.3 이외의 타입들 (Null, Undefined, Boolean)
+
+* Null : 의도적으로 값이 없는 상태를 표현하고자 할 때 사용한다.
+* Undefined : Null과는 달리 아직 어떠한값도 주어지지않은 상태를 표현하고자 할 때 사용한다.
+* Boolean : true, false의 표현을 위해 사용된다. 몇가지 규칙에 따라 true, false 키워드 말고도 Boolean 값을 나타낼 수 있다.
+```JS
+// false
+false, 0, 빈 문자열 (""), 수가 아님을 뜻하는 NaN, null, 와 undefined은 모두 false가 된다.
+
+// true
+이외의 모든 값은 true가 된다.
+```
+
+### 3. 변수 (Variables)
+JavaScript에서 새로운 변수는 let, const, var 키워드로 선언됩니다.
+
+* Let<br/>
+Let을 사용하면 블록 유효 범위 변수를 선언 할 수 있다.<br/> 선언된 변수는 변수가 포함 된 함수 블록에서 사용할 수 있다.
+```JS
+// ex
+// myLetVariable는 여기에서 보이지 *않습니다*
+
+for (let myLetVariable = 0; myLetVariable < 5; myLetVariable++) {
+  // myLetVariable는 여기에서 유효합니다
+}
+
+// myLetVariable는 여기에서 보이지 *않습니다*
+```
 
 ## Reference
 JavaScript 재입문하기 (JS ​튜토리얼) - https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript

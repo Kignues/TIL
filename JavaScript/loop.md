@@ -67,3 +67,6 @@ while (theMark == true) {
     console.log("hello");
 }    
 ```
+
+## Reference
+* MDN - https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Loops_and_iteration

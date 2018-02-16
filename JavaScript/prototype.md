@@ -19,3 +19,6 @@ console.log(student1.subject);    // math
 console.log(student2.grade);    // 3
 console.log(student2.subject);    // math
 ```
+
+## Reference
+생활코딩 - https://opentutorials.org/course/743/6573

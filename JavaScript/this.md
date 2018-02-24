@@ -34,3 +34,4 @@ function f2(){
 f2() === undefined;
 ```
 strict mode에서는, this의 값은 실행 컨텍스트 들어갈 때 할당되어 유지된다. 만약 정의 되지 않았다면, undefined가 유지된다. 게다가 null 또는 42 또는 "I am not this" 등  어떤 값이던 설정할 수 있다. <br/>
+
